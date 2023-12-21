@@ -1,0 +1,6 @@
+<div *ngIf="clientesService.clientes.length">
+  <h2>Listado Clientes</h2>
+  <div *ngFor="let cliente of clientesService.clientes">
+    {{cliente.id}} {{cliente.nombre}} {{cliente.cif}} {{cliente.direccion}} {{cliente.grupo}}
+  </div>
+</div>

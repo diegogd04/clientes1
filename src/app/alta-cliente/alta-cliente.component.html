@@ -1,0 +1,23 @@
+<h1>Alta cliente</h1>
+<form>
+  <label for="name">Nombre:</label>
+  <input type="text" id="name" [(ngModel)]="cliente.nombre">
+  <br><br>
+  <label for="cif">CIF:</label>
+  <input type="text" id="cif" [(ngModel)]="cliente.cif">
+  <br><br>
+  <label for="direccion">Dirección:</label>
+  <input type="text" id="direccion" [(ngModel)]="cliente.direccion">
+  <br><br>
+  <label for="grupo">Grupo:</label>
+  <select id="grupo">
+    <option *ngFor="let grupo of grupos" [value]="grupo">{{grupo.nombre}}</option>
+  </select>
+  <br><br>
+  <button (click)="agregarCliente()">Guardar</button>
+  <br><br>
+  <h2>Clientes Guardados</h2>
+  <ul>
+    <li *ngFor="let cliente of clientesService.getClientes() | async"></li>
+  </ul>
+</form>
